@@ -118,6 +118,25 @@ app.get("users",async (req,res)=>{
     }
 })
 
+app.post("savingaccount",async (req,res)=>{
+    try {
+        const saving = await SavingAccount.create(req.body)
+        return res.send(saving)
+        
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+app.post("fixedaccount",async (req,res)=>{
+    try {
+        const fixed = await FixedAccount.create(req.body)
+        return res.send(fixed)
+        
+    } catch (error) {
+        console.log(error)
+    }
+})
 
 
 
